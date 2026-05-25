@@ -53,7 +53,13 @@ $$\int_\Omega(u\Delta v+\nabla u\cdot\nabla v)\,dV=\oint_{\partial \Omega}u\nabl
 
 Ansatz is a linear combination of basis functions $\{\phi_i\}$. Goal is to minimize PINN loss function, but can solve linear system for $\phi_i$ explicitly via conjugate method (rather than approximating optimum as PINN does).
 
-### Which scheme to use?
+### FD
+
+- Upwind: estimate $u^n$ using $u^{n-1}$
+- Centered: estimate $u^n$ using $u^{n-1}$ and $u^{n+1}$
+- Downwind: estimate $u^n$ using $u^{n+1}$
+
+#### Which scheme to use?
 
 | PDE type | FD scheme | Stability |
 |----------|-----------|-----------|
